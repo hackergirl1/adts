@@ -20,7 +20,11 @@ class List //begin List definition
      int size();//return the number of elements in the List
      
      
-     /** MISSING OPERATIONS */
+     /** MISSING OPERATIONS 
+     */
+     void getAt(int k);//return element at location k 
+     void clear();
+     void display();
      //... fill in ....
 
 };//end List definition
