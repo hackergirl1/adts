@@ -59,7 +59,7 @@ void List::insert(int val, int k)
      num_elements++;
  }
 
-void List::remove(int k)
+int List::remove(int k)
 {
 	if (k < 1 or k > num_elements)//if the location is invalid 
 	     throw out_of_range("List::removeAt(...)");//throw an "out_of_range" exception
@@ -88,17 +88,17 @@ void List::remove(int k)
 	  }
 	
 	delete delPtr;
-	num_elements--;
+	return num_elements--;
 	}
 	
 int List::getAt(int k)
 {
-	Node* currptr = frontPtr;
+	Node* tmpPtr = frontPtr;
 	for (int loc=1;loc!=k;loc++)
 	{
-		currprt=currprt->link;
+		tmpPtr=tmpPtr->link;
 	}
-	return currptr->data;
+	return tmpPtr->data;
 }
 
 void List::clear()
@@ -111,9 +111,9 @@ void List::clear()
 
 void List::display()
 {
-	for(Node*currptr=frontPtr; currptr!=nullptr; currptr=currptr->link)
+	for(Node* tmpPtr=frontPtr; tmpPtr!=nullptr; tmpPtr=tmpPtr->link)
 	{
-	cout<<currptr->data<<"";
+	cout<<tmpPtr->data<<" ";
 	} 
 }
 	//Implementations of missing operations
