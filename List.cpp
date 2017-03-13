@@ -88,7 +88,7 @@ int List::remove(int k)
 	  }
 	
 	delete delPtr;
-	return num_elements--;
+	return --num_elements;
 	}
 	
 int List::getAt(int k)
